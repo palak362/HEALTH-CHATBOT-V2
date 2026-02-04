@@ -8,10 +8,11 @@ st.caption("General health guidance only. Not medical advice.")
 @st.cache_resource
 def load_model():
     return pipeline(
-        "text2text-generation",
+        "text-generation",
         model="google/flan-t5-small",
-        max_length=200
+        max_new_tokens=200
     )
+
 
 model = load_model()
 
